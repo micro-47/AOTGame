@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d1asvchyvkpgj"]
+
+[ext_resource type="MeshLibrary" uid="uid://dtmvfxhlimxne" path="res://Assets/mesh.tres" id="1_u7u5t"]
+[ext_resource type="PackedScene" uid="uid://dx4xd65ds5nkx" path="res://Objects/basePlayer.tscn" id="2_pmnd5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pmnd5"]
+
+[sub_resource type="Environment" id="Environment_pmnd5"]
+background_mode = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_05545"]
+
+[sub_resource type="Compositor" id="Compositor_yeklw"]
+
+[node name="TestWorld" type="Node3D" unique_id=1083497711]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1706761123]
+mesh_library = ExtResource("1_u7u5t")
+physics_material = SubResource("PhysicsMaterial_pmnd5")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65535, 65535, 2, 65535, 0, 2, 65535, 1, 2, 0, 1, 2, 0, 2, 2, 0, 0, 2, 0, 65535, 2, 0, 65534, 2, 65535, 2, 2, 1, 2, 2, 1, 1, 2, 1, 0, 2, 2, 65535, 2, 2, 65534, 2, 1, 65534, 2, 1, 65535, 2, 2, 0, 2, 2, 1, 2, 2, 2, 2, 65534, 2, 2, 65533, 2, 2, 65533, 1, 2, 65533, 0, 2, 65533, 65535, 2, 65534, 65535, 2, 65534, 0, 2, 65534, 1, 2, 65535, 65534, 2, 65534, 65534, 2, 65533, 65534, 2)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Node3D" parent="." unique_id=587243327 instance=ExtResource("2_pmnd5")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1249688840]
+environment = SubResource("Environment_pmnd5")
+camera_attributes = SubResource("CameraAttributesPractical_05545")
+compositor = SubResource("Compositor_yeklw")
